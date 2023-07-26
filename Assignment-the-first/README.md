@@ -19,7 +19,7 @@ A7	GATCTTGC    B10	AGAGTCCA    A8	AGGATAGC
 You can find a txt file containing these indexes on Talapas.
 
 4 FASTQ files are: 
-```
+```bash
 1294_S1_L008_R1_001.fastq.gz
 1294_S1_L008_R2_001.fastq.gz
 1294_S1_L008_R3_001.fastq.gz
@@ -40,9 +40,22 @@ Please fill in your answers on [Answers.md](Answers.md)
     3.	How many indexes have undetermined (N) base calls? (Utilize your command line tool knowledge. Submit the command(s) you used. CHALLENGE: use a one-line command)
 
 ## Part 2 – Develop an algorithm to de-multiplex the samples
-Write up a strategy (**NOT A SCRIPT**) for writing an algorithm to de-multiplex files and reporting index-hopping. That is, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplex reads by index-pair, outputting one R1 FASTQ file and one R2 FASTQ file per matching index-pair, another two FASTQ files for non-matching index-pairs (index-hopping), and two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff).  Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
+Write up a strategy (**NOT A SCRIPT**) for writing an algorithm to de-multiplex files and reporting index-hopping. That is, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplex reads by index-pair, outputting:
 
-Additionally, your algorithm should report the number of read-pairs with properly matched indexes (per index-pair), the number of read pairs with index-hopping observed, and the number of read-pairs with unknown index(es). You should strive to report values for each possible pair of indexes (both swapped and dual matched). **You should not write any code for this portion of the assignment**. Be sure to:
+- one R1 FASTQ file and one R2 FASTQ file **per** matching index-pair, 
+- another two FASTQ files for non-matching index-pairs (index-hopping), and 
+- two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff)
+    
+Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
+
+Additionally, your algorithm should report: 
+- the number of read-pairs with properly matched indexes (per index-pair), 
+- the number of read pairs with index-hopping observed, and
+- the number of read-pairs with unknown index(es).
+
+You should strive to report values for each possible pair of indexes (both swapped and dual matched). **You should not write any code for this portion of the assignment**. 
+
+### Be sure to:
 - Define the problem
 - Determine/describe what output would be informative
 - Write examples (unit tests!):
@@ -50,17 +63,21 @@ Additionally, your algorithm should report the number of read-pairs with properl
     - Include the appropriate number of properly formatted output FASTQ files given your input files
 - Develop your algorithm using pseudocode
 - Determine high level functions
-    - Description/doc string – What does this function do?
     - Function headers (name and parameters)
+    - Description/doc string – What does this function do?
     - Test examples for individual functions
-        - Example: If you were writing a the function ```convert_phred(letter)```, a test example could be
-        ```
-        Input: I
-        Expected output: 40
-        ```
     - Return statement
+    - Example: If you were planning to write the function ```convert_phred()```, you would include something like
+      ```python
+      def convert_phred(letter: str) -> int:
+          '''Takes a single ASCII character (string) encoded in Phred+33 and
+          returns the quality score value as an integer.'''
+          return qscore
+      Input: I
+      Expected output: 40
+      ```
 
 Turn in:
 
-[Answers to questions](Answers.md), Python script for [part 1](https://github.com/Leslie-C/Demultiplexing/tree/master/Assignment-the-first#part-1--quality-score-distribution-per-nucleotide), plots, and anything outlined in part 2 (NOT CODE!) to [GitHub](.).
+[Answers to questions](Answers.md), Python script for [part 1](https://github.com/Leslie-C/Demultiplexing/tree/master/Assignment-the-first#part-1--quality-score-distribution-per-nucleotide), 4 plots, and anything outlined in part 2 (NOT CODE!) to [GitHub](.).
 
