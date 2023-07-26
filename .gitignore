@@ -8,8 +8,8 @@
 *.gtf
 *.gff
 # allow fastq files in test input and output folders
-!TEST-input_FASTQ/
-!TEST-output_FASTQ/
+!TEST-input_FASTQ/*
+!TEST-output_FASTQ/*
 
 # vscode
 .vscode/
