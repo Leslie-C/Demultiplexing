@@ -9,6 +9,7 @@ Write your code to demultiplex the samples. Be sure to:
 - Create a useful report for the end user of your code
 - Use `argparse` to "generalize" your code
 - Be mindful of "simple" things you can do to optimize your code
+- Write your output files to `/scratch/bgmp/<USER>/demux/`
 - Follow the specifications laid out in [Assignment the First](../Assignment-the-first#part-2--develop-an-algorithm-to-de-multiplex-the-samples) for the code
     - Unclear? Ask!
 
