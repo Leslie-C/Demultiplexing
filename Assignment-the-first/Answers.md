@@ -12,8 +12,8 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
+    2. **YOUR ANSWER HERE - good quality score cutoff and justification**
+    3. **YOUR ANSWER HERE - # indexes that have undetermined (N) base calls**
     
 ## Part 2
 1. Define the problem
