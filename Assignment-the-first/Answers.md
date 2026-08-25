@@ -1,7 +1,7 @@
 # Assignment the First
 
 ## Part 1
-1. Be sure to upload your Python script. Provide a link to it here:
+1. Be sure to upload your lab notebook with details about your initial data exploration. Provide a link to it here:
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
@@ -10,7 +10,7 @@
 | 1294_S1_L008_R3_001.fastq.gz |  |  |  |
 | 1294_S1_L008_R4_001.fastq.gz |  |  |  |
 
-2. Per-base NT distribution
+2. Per-base NT distribution - Be sure to upload your Python script. Provide a link to it here:
     1. Use markdown to insert your 4 histograms here.
     2. **YOUR ANSWER HERE - good quality score cutoff and justification**
     3. **YOUR ANSWER HERE - # indexes that have undetermined (N) base calls**
